@@ -1,17 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="6" total="7" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Pages.HomePage_Test" duration-ms="80464" started-at="2018-02-16T20:58:56Z" finished-at="2018-02-16T21:00:16Z">
+  <suite name="Command line suite" duration-ms="110956" started-at="2018-02-17T09:16:36Z" finished-at="2018-02-17T09:18:26Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="80464" started-at="2018-02-16T20:58:56Z" finished-at="2018-02-16T21:00:16Z">
-      <class name="Pages.HomePage_Test">
-        <test-method status="PASS" signature="HomePageValidation()[pri:0, instance:Pages.HomePage_Test@1554909b]" name="HomePageValidation" duration-ms="80404" started-at="2018-02-17T02:28:56Z" finished-at="2018-02-17T02:30:16Z">
+    <test name="Command line test" duration-ms="110956" started-at="2018-02-17T09:16:36Z" finished-at="2018-02-17T09:18:26Z">
+      <class name="Tests.HomePage_Test">
+        <test-method status="PASS" signature="beforClass()[pri:0, instance:Tests.HomePage_Test@3dd3bcd]" name="beforClass" is-config="true" duration-ms="91146" started-at="2018-02-17T14:46:36Z" finished-at="2018-02-17T14:48:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforClass -->
+        <test-method status="PASS" signature="beforMethod(java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:Tests.HomePage_Test@3dd3bcd]" name="beforMethod" is-config="true" duration-ms="7746" started-at="2018-02-17T14:48:08Z" finished-at="2018-02-17T14:48:15Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[internet explorer]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[11.0]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Windows 7]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[public void Tests.HomePage_Test.HomePageValidation()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforMethod -->
+        <test-method status="PASS" signature="HomePageValidation()[pri:0, instance:Tests.HomePage_Test@3dd3bcd]" name="HomePageValidation" duration-ms="6738" started-at="2018-02-17T14:48:15Z" finished-at="2018-02-17T14:48:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- HomePageValidation -->
-      </class> <!-- Pages.HomePage_Test -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:Tests.HomePage_Test@3dd3bcd]" name="afterMethod" is-config="true" duration-ms="4474" started-at="2018-02-17T14:48:22Z" finished-at="2018-02-17T14:48:26Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=HomePageValidation status=SUCCESS method=HomePage_Test.HomePageValidation()[pri:0, instance:Tests.HomePage_Test@3dd3bcd] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- Tests.HomePage_Test -->
+      <class name="Tests.BaseTest">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:Tests.BaseTest@12843fce]" name="beforeSuite" is-config="true" duration-ms="491" started-at="2018-02-17T14:46:35Z" finished-at="2018-02-17T14:46:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:Tests.BaseTest@12843fce]" name="beforeTest" is-config="true" duration-ms="788" started-at="2018-02-17T14:46:36Z" finished-at="2018-02-17T14:46:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="aftersuite()[pri:0, instance:Tests.BaseTest@12843fce]" name="aftersuite" is-config="true" duration-ms="233" started-at="2018-02-17T14:48:27Z" finished-at="2018-02-17T14:48:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aftersuite -->
+      </class> <!-- Tests.BaseTest -->
     </test> <!-- Command line test -->
-  </suite> <!-- Pages.HomePage_Test -->
+  </suite> <!-- Command line suite -->
 </testng-results>

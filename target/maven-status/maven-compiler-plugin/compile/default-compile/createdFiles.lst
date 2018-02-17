@@ -1,2 +1,2 @@
-Pages\HomePage.class
-Pages\BasePage.class
+core\generic\utilities\AutomationCore.class
+core\generic\utilities\SeleniumHelper.class
