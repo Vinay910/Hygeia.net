@@ -59,12 +59,12 @@ public class SeleniumHelper extends AutomationCore
 			if(browserName.equalsIgnoreCase("firefox"))
 			{
 				System.out.println("<=============Execution Started on FIREFOX browser=============>");
-				
 				FirefoxProfile ffProfile = new FirefoxProfile();
 				ffProfile.setAcceptUntrustedCertificates(true);
 				ffProfile.setEnableNativeEvents(true);
-				System.setProperty("webdriver.firefox.marionette", file.getAbsolutePath());
+				System.setProperty("webdriver.gecko.driver", file.getAbsolutePath());
 				currentDriver = new FirefoxDriver();
+				
 			}
 			else if(browserName.equalsIgnoreCase("InternetExplorer"))
 			{
@@ -80,9 +80,8 @@ public class SeleniumHelper extends AutomationCore
 				currentDriver = new InternetExplorerDriver(capabilities);		
 				
 			}
-			else if(browserName.equals("chrome"))
+			else if(browserName.equalsIgnoreCase("chrome"))
 			{
-				
 				System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
 				currentDriver = new ChromeDriver();
 			}
@@ -90,15 +89,14 @@ public class SeleniumHelper extends AutomationCore
 			{	
 				currentDriver = new SafariDriver();
 			}	
-			//}
-			currentDriver.manage().timeouts().implicitlyWait(syncTime,TimeUnit.SECONDS);
+			//currentDriver.manage().timeouts().implicitlyWait(syncTime, TimeUnit.SECONDS);
 			currentDriver.manage().deleteAllCookies();
 			currentDriver.manage().window().maximize();
 			
 		}
 		catch(Exception e)
 		{
-			e.getMessage();
+			e.printStackTrace();
 			currentDriver=null;
 		}		
 		

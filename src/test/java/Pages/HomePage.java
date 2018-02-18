@@ -14,7 +14,7 @@ public class HomePage extends BasePage{
 	}
 	
 	@FindBy (how=How.XPATH,using="html/body/table/tbody/tr/td/table/tbody/tr[9]/td/table/tbody/tr/td[1]/a/img")
-	private WebElement providerSearch;
+	public WebElement providerSearch;
 	
 	public void ProviderSearch()
 	{

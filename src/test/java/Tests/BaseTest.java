@@ -101,10 +101,10 @@ public class BaseTest extends AutomationCore {
 	{
 		if(testExecutionPlatform.equalsIgnoreCase("Local Machine")) {
 		StartDriver();
+		System.out.println(testDriver);
+		testDriver.manage().deleteAllCookies();
+		testDriver.manage().window().maximize();
 		getHomePage();
-		testDriver=currentDriver;
-		//testDriver.manage().deleteAllCookies();
-		//testDriver.manage().window().maximize();
 		}
 	}
 	boolean isDependant;
@@ -133,11 +133,10 @@ public class BaseTest extends AutomationCore {
 //						clearBrowserCache(browser);
 				}
 			if(!isDependant) {
-			
 			testDriver.manage().deleteAllCookies();
 			testDriver.get(appURL);
 			}
-			testDriver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+			//testDriver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 		
 		}catch(Exception e)
 		{
@@ -296,35 +295,33 @@ public class BaseTest extends AutomationCore {
 	
 		public synchronized void StartDriver()
 		{	
-			
-				currentBrowser = "InternetExplorer";
-				
 				closeAllOpenedBrowsers();
 					
 				killExcel();
-				
+			
 				if(currentBrowser.equalsIgnoreCase("Firefox"))
 				{
 					testDriver=SeleniumHelper.launchDriver(currentBrowser,System.getProperty("user.dir")+Environment("ffDriverPath")
 							,Long.parseLong(Environment("ffDefaultTestSyncTimePeriod")));	
+					
 				}
 				else if(currentBrowser.equalsIgnoreCase("InternetExplorer"))
 				{
 					testDriver=SeleniumHelper.launchDriver(currentBrowser,System.getProperty("user.dir")+Environment("ieDriverPath")
 							,Long.parseLong(Environment("ieDefaultTestSyncTimePeriod")));	
 				}
-				else if(currentBrowser.equals("chrome"))
+				else if(currentBrowser.equalsIgnoreCase("chrome"))
 				{
-					testDriver=SeleniumHelper.launchDriver(currentBrowser,Environment("chromeDriverPath")
+					
+					testDriver=SeleniumHelper.launchDriver(currentBrowser,System.getProperty("user.dir")+Environment("chromeDriverPath")
 							,Long.parseLong(Environment("chromeDefaultTestSyncTimePeriod")));
+				
 				}
 			
 			}
 	
 	public synchronized void StartDriver(String browser,String browserversion, String os)
 	{	
-		
-			currentBrowser = "InternetExplorer";
 			
 			closeDriverServers();
 			
