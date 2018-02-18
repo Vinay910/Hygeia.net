@@ -421,7 +421,7 @@ public class AutomationCore {
 
 		return data;
 	}
-
+	//Called by getCurrentDateAndTime in BaseTest
 	public static String formatDateAndTime(Date dateValue, String format) {
 		SimpleDateFormat ft = new SimpleDateFormat(format);
 		String formatedDateValue = ft.format(dateValue);
@@ -458,7 +458,7 @@ public class AutomationCore {
 		return null;
 
 	}
-
+	//Called by getCurrentDateAndTime in BaseTest
 	public static Date getCurrentDateAndTime() {
 		Date dNow = new Date();
 		return dNow;

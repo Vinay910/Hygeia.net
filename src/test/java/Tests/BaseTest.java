@@ -177,7 +177,6 @@ public class BaseTest extends AutomationCore {
 			System.out.println(getReportFileName());
 			testDriver.get(getReportFileName());
 			
-			
 			WebElement summaryView = testDriver.findElement(By.xpath("//a[@id='enableDashboard']/i"));
 			summaryView.click();
 		
@@ -297,11 +296,10 @@ public class BaseTest extends AutomationCore {
 		public synchronized void StartDriver()
 		{	
 			
-			
-				currentBrowser = "InternetExplorer";
+				currentBrowser = "Firefox";
 				
 				closeAllOpenedBrowsers();
-				
+					
 				killExcel();
 				
 				if(currentBrowser.equalsIgnoreCase("Firefox"))
