@@ -13,14 +13,13 @@ public class Testing extends BaseTest {
 	public static void main(String[] args) throws Exception {
 		FileInputStream file=new FileInputStream(System.getProperty("user.dir")+Environment("testDataFilePath_Test"));
 		Workbook workbook=new XSSFWorkbook(file);
-		int excelname = workbook.getNameIndex("TestExecution_Details");	
-		Name name=workbook.getNameAt(excelname);
+		Name name=workbook.getName("TestExecution_Details");
 		@SuppressWarnings("deprecation")
 		AreaReference area = new AreaReference(name.getRefersToFormula());  
 		CellReference[] cellrefs = area.getAllReferencedCells();
 		Sheet s = workbook.getSheet(name.getSheetName());
 		int startRowindex = cellrefs[0].getRow();
-		String appURL = s.getRow(startRowindex).getCell(2).getStringCellValue();
+		String appURL = s.getRow(startRowindex).getCell(1).getStringCellValue();
 		workbook.close();
 		System.out.println(appURL);
 		
