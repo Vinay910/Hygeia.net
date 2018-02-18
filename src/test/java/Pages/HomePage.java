@@ -18,7 +18,7 @@ public class HomePage extends BasePage{
 	
 	public void ProviderSearch()
 	{
-		currentDriver.get("https://hygeia.net/");
+		currentDriver.get(appURL);
 		seleniumHelper.clickElement(providerSearch);
 	}
 }

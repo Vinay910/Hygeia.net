@@ -102,8 +102,9 @@ public class BaseTest extends AutomationCore {
 		if(testExecutionPlatform.equalsIgnoreCase("Local Machine")) {
 		StartDriver();
 		getHomePage();
-		testDriver.manage().deleteAllCookies();
-		testDriver.manage().window().maximize();
+		testDriver=currentDriver;
+		//testDriver.manage().deleteAllCookies();
+		//testDriver.manage().window().maximize();
 		}
 	}
 	boolean isDependant;
@@ -296,7 +297,7 @@ public class BaseTest extends AutomationCore {
 		public synchronized void StartDriver()
 		{	
 			
-				currentBrowser = "Firefox";
+				currentBrowser = "InternetExplorer";
 				
 				closeAllOpenedBrowsers();
 					

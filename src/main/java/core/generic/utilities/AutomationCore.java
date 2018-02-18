@@ -292,16 +292,12 @@ public class AutomationCore {
 		int RowCount = 0;
 		int columnCount = 0;
 		int itr = 0;
-		// boolean str=false;
-		// boolean num=false;
 		Object[][] data = null;
-		// int firstRowNum=0;
 		int statuscol = 0;
 		Cell c = null;
 		int lastCellIndex = 0;
 		int nItr = 0;
 		boolean recordsFOund = false;
-
 		System.out.println("k");
 
 		try {
