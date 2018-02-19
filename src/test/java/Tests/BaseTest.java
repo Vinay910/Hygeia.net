@@ -37,6 +37,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 
 import Pages.HomePage;
+import Pages.ProviderSearchPage;
 import core.generic.utilities.AutomationCore;
 import core.generic.utilities.SeleniumHelper;
 

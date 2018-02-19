@@ -22,6 +22,8 @@ import core.generic.utilities.AutomationCore;
 @SuppressWarnings("deprecation")
 public  class BasePage extends AutomationCore{
 	
+	HomePage homePage;
+	ProviderSearchPage providerSearchPage;
 	
 	private int firstCharClassIndex ;
 	private String currentbBaseScreenName;
