@@ -298,14 +298,11 @@ public class AutomationCore {
 		int lastCellIndex = 0;
 		int nItr = 0;
 		boolean recordsFOund = false;
-		System.out.println("k");
-
 		try {
 			FileInputStream fileInputStream = new FileInputStream(
-					System.getProperty("user.dir") + Environment("testDataFilePath"));
+			System.getProperty("user.dir") + Environment("testDataFilePath"));
 			Workbook workBook = new XSSFWorkbook(fileInputStream);
 			int namedCellIdx = workBook.getNameIndex(tableName.trim());
-			// workBook.getname
 			org.apache.poi.ss.usermodel.Name aNamedCell = workBook.getNameAt(namedCellIdx);
 			AreaReference area = new AreaReference(aNamedCell.getRefersToFormula());
 			CellReference[] cellrefs = area.getAllReferencedCells();
@@ -320,9 +317,8 @@ public class AutomationCore {
 
 				switch (c.getCellType()) {
 				case XSSFCell.CELL_TYPE_STRING:
-					// str =true;
 					cellDataList.add(c.getStringCellValue().toString());
-					if (c.getStringCellValue().toString().trim().equals("No")
+					if (c.getStringCellValue().toString().trim().equalsIgnoreCase("No")
 							&& c.getColumnIndex() - r.getFirstCellNum() == statuscol) {
 
 						ignoredRows.add(c.getRowIndex());
@@ -331,7 +327,6 @@ public class AutomationCore {
 				case XSSFCell.CELL_TYPE_NUMERIC:
 					c.setCellType(HSSFCell.CELL_TYPE_STRING);
 					cellDataList.add(c.getStringCellValue().toString());
-					// num=true;
 					break;
 				case XSSFCell.CELL_TYPE_BLANK:
 					c.setCellType(HSSFCell.CELL_TYPE_STRING);
@@ -340,10 +335,8 @@ public class AutomationCore {
 
 				case XSSFCell.CELL_TYPE_FORMULA:
 					try {
-						// str =true;
 						cellDataList.add(c.getStringCellValue().toString());
-						if (c.getStringCellValue().toString().trim().equals("No") && c.getColumnIndex() == statuscol) {
-
+						if (c.getStringCellValue().toString().trim().equalsIgnoreCase("No") && c.getColumnIndex() == statuscol) {
 							ignoredRows.add(c.getRowIndex());
 						}
 					} catch (Exception e) {
@@ -359,7 +352,6 @@ public class AutomationCore {
 				if (i == cellrefs.length - 1) {
 					columnCount = r.getPhysicalNumberOfCells();
 					RowCount = (((i + 1) / columnCount) - (ignoredRows.size()));
-					// RowCount=RowCount-1;
 				}
 			}
 			workBook.close();
@@ -375,7 +367,7 @@ public class AutomationCore {
 				if (cellDataList.size() != 0) {
 
 					while (itr < cellDataList.size()) {
-						if (cellDataList.get(statuscol).equals("Yes")) {
+						if (cellDataList.get(statuscol).equalsIgnoreCase("Yes")) {
 							while (itr <= statuscol) {
 								if (itr != statuscol) {
 									newCellDataList.add(cellDataList.get(itr));

@@ -7,9 +7,10 @@ import Pages.HomePage;
 
 public class HomePage_Test extends BaseTest {
 
-	@Test//(dataProvider="dataProvider")
-	public void HomePageValidation()
+	@Test(dataProvider="dataProvider")
+	public void HomePageValidation(String one,String two,String three)
 	{
 		homePage.ProviderSearch();
+		
 	}
 }
