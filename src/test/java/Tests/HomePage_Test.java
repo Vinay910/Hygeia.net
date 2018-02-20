@@ -1,16 +1,20 @@
 package Tests;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.annotations.Test;
-
-import Pages.HomePage;
+import Pages.BasePage;
 
 public class HomePage_Test extends BaseTest {
 
 	@Test(dataProvider="dataProvider")
 	public void HomePageValidation(String one,String two,String three)
 	{
-		homePage.ProviderSearch();
+		contactUs=homePage.contactUs();
+		currentDriver.switchTo().frame(0);
+		contactUs=contactUs.clickContactUs1();
+		currentDriver.switchTo().frame("leftnav");
+		contactUs=contactUs.clickContactUs2();
+		currentDriver.switchTo().frame(0);
+		contactUs.clickHome();
 		
 	}
 }

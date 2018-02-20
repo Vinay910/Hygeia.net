@@ -36,6 +36,7 @@ import org.testng.asserts.SoftAssert;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 
+import Pages.ContactUs;
 import Pages.HomePage;
 import Pages.ProviderSearchPage;
 import core.generic.utilities.AutomationCore;
@@ -46,6 +47,8 @@ import core.generic.utilities.SeleniumHelper;
 public class BaseTest extends AutomationCore {
 	
 	HomePage homePage;
+	ProviderSearchPage providerSearchPage;
+	ContactUs contactUs;
 	public WebDriver testDriver;
 	public boolean status=true;
 	public int totalIterations =0;

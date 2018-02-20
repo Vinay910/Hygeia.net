@@ -15,6 +15,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import com.relevantcodes.extentreports.LogStatus;
 import core.generic.utilities.AutomationCore;
@@ -22,8 +24,10 @@ import core.generic.utilities.AutomationCore;
 @SuppressWarnings("deprecation")
 public  class BasePage extends AutomationCore{
 	
-	HomePage homePage;
-	ProviderSearchPage providerSearchPage;
+	public HomePage homePage;
+	
+	public ProviderSearchPage providerSearchPage;
+	public WebDriverWait wait;
 	
 	private int firstCharClassIndex ;
 	private String currentbBaseScreenName;

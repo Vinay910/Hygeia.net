@@ -1,10 +1,14 @@
 package Pages;
 
+import java.util.ArrayList;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
 
 public class HomePage extends BasePage{
 
@@ -46,13 +50,31 @@ public class HomePage extends BasePage{
 	@FindBy (how=How.XPATH, using="html/body/table/tbody/tr/td/table/tbody/tr[11]/td/table/tbody/tr/td[3]/a/img")
 	private WebElement termsButton;
 
-	public ProviderSearchPage ProviderSearch()
+	String window=currentDriver.getWindowHandle();
+	public ContactUs contactUs()
 	{
 		currentDriver.get(appURL);
-		seleniumHelper.clickElement(providerSearch);
-		return new ProviderSearchPage();
+		seleniumHelper.clickElement(contactUs);
+		return new ContactUs();
 	}
 	
+	public void WindowSwitch()
+	{
+		ArrayList<String> arrayList=new ArrayList<String>();
+		arrayList=(ArrayList)currentDriver.getWindowHandles();
+		for(int i=0;i<=arrayList.size();i++)
+		{
+			if(arrayList.get(i).toString().equals(window))
+			{
+				
+			}
+			else
+			{
+				currentDriver.switchTo().window(arrayList.get(i).toString());
+			}
+		}
+		
+	}
 	public void test()
 	{
 

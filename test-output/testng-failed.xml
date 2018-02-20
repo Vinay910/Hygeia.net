@@ -9,7 +9,7 @@
           <include name="beforeTest"/>
           <include name="afterMethod"/>
           <include name="aftersuite"/>
-          <include name="HomePageValidation"/>
+          <include name="HomePageValidation" invocation-numbers="0"/>
           <include name="beforMethod"/>
           <include name="beforClass"/>
         </methods>

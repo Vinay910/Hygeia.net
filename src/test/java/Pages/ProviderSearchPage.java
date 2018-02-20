@@ -23,11 +23,8 @@ public class ProviderSearchPage extends BasePage{
 
 	public HomePage LinkVerification()
 	{
-		providerSearchPage=homePage.ProviderSearch();
 		seleniumHelper.clickElement(hygeiaLink);
 		return new HomePage();
 	}
-	
-	
 	
 }
